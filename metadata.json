@@ -3,12 +3,25 @@
   "version": "0.1.0",
   "author": "Sebastian Reitenbach",
   "summary": "A puppet module to manage cyrus sasl",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "source": "https://github.com/buzzdeee/buzzdeee-cyrus_sasl.git",
   "project_page": "https://github.com/buzzdeee/buzzdeee-cyrus_sasl",
   "issues_url": "https://github.com/buzzdeee/buzzdeee-cyrus_sasl/issues",
   "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+    {"name":"puppetlabs-stdlib","version_requirement":">= 4.5.0"}
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "OpenBSD",
+      "operatingsystemrelease": [
+        "5.6"
+      ]
+    }
+  ],
+  "tags": [
+    "OpenBSD",
+    "cyrus",
+    "sasl",
   ]
 }
 
