@@ -1,3 +1,6 @@
+# Private class, do not use directly.
+# The parameters that drive this module.
+
 class cyrus_sasl::params {
   $saslauthd_conf_settings = {
     ldap_servers        => 'ldap://127.0.0.1/',

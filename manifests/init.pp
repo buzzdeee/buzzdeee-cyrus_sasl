@@ -29,11 +29,11 @@
 #
 # === Authors
 #
-# Author Name <author@domain.com>
+# Sebastian Reitenbach <sebastia@l00-bugdead-prods.de>
 #
 # === Copyright
 #
-# Copyright 2014 Your name here, unless otherwise noted.
+# Copyright 2014 Sebastian Reitenbach, unless otherwise noted.
 #
 class cyrus_sasl (
   $override_saslauthd_conf_settings = $cyrus_sasl::params::saslauthd_conf_settings,
@@ -45,18 +45,18 @@ class cyrus_sasl (
   $service_flags  = $cyrus_sasl::params::service_flags,
 ) inherits cyrus_sasl::params {
 
-  class { cyrus_sasl::install: 
+  class { 'cyrus_sasl::install':
     package_ensure => $package_ensure,
     package_flavor => $package_flavor,
     package_name   => $package_name,
   }
 
   $saslauthd_conf_settings = deep_merge($cyrus_sasl::params::saslauthd_conf_settings, $override_saslauthd_conf_settings)
-  class { cyrus_sasl::config:
+  class { 'cyrus_sasl::config':
     saslauthd_conf_settings => $saslauthd_conf_settings,
   }
 
-  class { cyrus_sasl::service:
+  class { 'cyrus_sasl::service':
     service_ensure => $service_ensure,
     service_enable => $service_enable,
     service_flags  => $service_flags,

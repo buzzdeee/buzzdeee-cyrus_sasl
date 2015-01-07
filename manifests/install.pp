@@ -1,3 +1,6 @@
+# Private class, do not use directly.
+# Takes care about package installation.
+
 class cyrus_sasl::install (
   $package_name,
   $package_flavor,

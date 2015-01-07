@@ -1,3 +1,5 @@
+# Private class, do not use directly.
+# Takes care about the configuration file.
 class cyrus_sasl::config (
   $saslauthd_conf_settings,
 ){

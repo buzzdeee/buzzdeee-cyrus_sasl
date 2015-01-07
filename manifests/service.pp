@@ -1,3 +1,6 @@
+# Private class, do not use directly.
+# Takes care about managing the service.
+
 class cyrus_sasl::service (
   $service_ensure,
   $service_flags,
