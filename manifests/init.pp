@@ -43,6 +43,7 @@ class cyrus_sasl (
   $service_ensure = $cyrus_sasl::params::service_ensure,
   $service_enable = $cyrus_sasl::params::service_enable,
   $service_flags  = $cyrus_sasl::params::service_flags,
+  $sasl_auth_dir  = $cyrus_sasl::params::sasl_auth_dir,
 ) inherits cyrus_sasl::params {
 
   class { 'cyrus_sasl::install':
@@ -53,6 +54,7 @@ class cyrus_sasl (
 
   $saslauthd_conf_settings = deep_merge($cyrus_sasl::params::saslauthd_conf_settings, $override_saslauthd_conf_settings)
   class { 'cyrus_sasl::config':
+    sasl_auth_dir           => $sasl_auth_dir,
     saslauthd_conf_settings => $saslauthd_conf_settings,
   }
 

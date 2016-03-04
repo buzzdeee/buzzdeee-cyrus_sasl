@@ -26,4 +26,5 @@ class cyrus_sasl::params {
   $service_ensure = 'running'
   $service_enable = true
   $service_flags  = '-a ldap'
+  $sasl_auth_dir  = '/etc/sasl2'
 }
